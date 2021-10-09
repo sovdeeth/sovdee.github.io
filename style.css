@@ -6,7 +6,7 @@
 
 @keyframes move-twink-back {
     from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    to {background-position:-1000px 500px;}
 }
 
 .stars, .twinkling {
@@ -26,6 +26,6 @@
 .twinkling{
   background:transparent url(twinkling.png) repeat top center;
   z-index:1;
-  animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 100s linear infinite;
 }
 
