@@ -64,8 +64,70 @@ function updateStars() {
 	for (var i = 0; i < stars.length; i++){
     updateStarIntensity(stars[i]);
   }
-  time += 0.03;
+  time += 0.015;
   /* console.log(stars[1].style.opacity) */
+}
+
+
+function shootingStar(x,y,x2,y2){
+  let star = document.getElementById("shooting_star");
+  let rotation = Math.atan((y2-y)/(x2-x));
+  if (x2-x < 0) rotation += 3.1415;
+  star.style.transform = "rotate("+(rotation/3.141592*180+180)+"deg)";
+  star.style.top = y + "px";
+  star.style.left = x + "px";
+  star.style.opacity = 1;
+  setTimeout(function(){
+    star.classList.add("animateStar");
+    star.style.top = y2 + "px";
+    star.style.left = x2 + "px";
+  },10);
+  setTimeout(function(){
+    star.classList.remove("animateStar");
+    star.style.opacity = 0;
+  },2500);
+}
+
+function pointOnEdge(exclude = 0){
+  let offsetX = 0
+  let offsetY = 0
+  switch(exclude){
+    case 1:
+      offsetX = width/2;
+      break;
+    case 2:
+      offsetY = height/2;
+      break;
+    case 3:
+      offsetX = width/-2;
+      break;
+    case 4:
+      offsetY = height/-2;
+      break;
+    default: break;
+  }
+  let x = Math.random() * width + offsetX;
+  let y = Math.random() * height + offsetY;
+  let closest = Math.min(Math.min(x,width-x),Math.min(y,height-y));
+
+  if (x == closest || width-x == closest){
+    x = x < width/2 ? -100 : width + 100;
+  } else {
+    y = y < height/2 ? -100 : height + 100;
+  }
+
+  return [x,y];
+}
+  
+function randomShootingStar(){
+  let p1 = pointOnEdge();
+  let exclude = 0; 
+  if (p1[0] == -100) exclude = 1;
+  if (p1[1] == -100) exclude = 2;
+  if (p1[0] == width+100) exclude = 3;
+  if (p1[1] == height+100) exclude = 4;
+  let p2 = pointOnEdge(exclude);
+  shootingStar(p1[0],p1[1],p2[0],p2[1])
 }
 
 
@@ -83,3 +145,4 @@ function updateStars() {
 generateStars(0, 0, width, height);
 window.onresize = resizeCheck;
 var twinkle = setInterval(updateStars, 100);
+var shootingstars = setInterval(randomShootingStar, 10000);

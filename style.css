@@ -23,3 +23,21 @@ body {
 #main {
     height: 2000px;
 }
+
+#shooting_star {
+  position: absolute;
+  z-index: 1;
+  height: 3px;
+  width: 200px;
+  top: 600px;
+  left: 600px;
+  opacity: 0;
+  background-image: url(shootingstar.png);
+}
+
+.animateStar {
+  -webkit-transition: 2.5s linear;
+  -moz-transition: 2.5s linear;
+  -o-transition: 2.5s linear;
+  transition: 2.5s linear;
+}
