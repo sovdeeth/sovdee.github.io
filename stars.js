@@ -73,17 +73,19 @@ function shootingStar(x,y,x2,y2){
   let star = document.getElementById("shooting_star");
   let rotation = Math.atan((y2-y)/(x2-x));
   if (x2-x < 0) rotation += 3.1415;
-  star.style.transform = "rotate("+(rotation/3.141592*180+180)+"deg)";
+  rotation = "rotate("+(rotation/3.141592*180+180)+"deg)";
+  star.style.transform = rotation;
   star.style.top = y + "px";
   star.style.left = x + "px";
+  console.log(x,y,x2,y2, x2-x, y2-y)
   star.style.opacity = 1;
   setTimeout(function(){
     star.classList.add("animateStar");
-    star.style.top = y2 + "px";
-    star.style.left = x2 + "px";
+    star.style.transform = "translate("+(x2-x)+"px,"+(y2-y)+"px) " + rotation;
   },10);
   setTimeout(function(){
     star.classList.remove("animateStar");
+    star.style.transform = "";
     star.style.opacity = 0;
   },2500);
 }
