@@ -32,7 +32,7 @@ body {
   top: 0px;
   left: 0px;
   opacity: 0;
-  background-image: url(shootingstar.png);
+  background-image: url(shootingstar.svg);
   z-index: 1;
 }
 
@@ -41,4 +41,22 @@ body {
   -moz-transition: 2.5s linear;
   -o-transition: 2.5s linear;
   transition: 2.5s linear;
+}
+
+#background-layer-1 {
+  background-color: #FFFFFF;
+  z-index: 10;
+  mask-image: url(backgroundMountains.svg);
+  mask-repeat: no-repeat;
+  mask-size: 100% auto;
+  -webkit-mask-image: url(backgroundMountains.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% auto;
+
+  width: 100vw;
+  height: 20vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
