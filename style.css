@@ -44,7 +44,7 @@ body {
 }
 
 #background-layer-1 {
-  background-color: #070c10;
+  background: transparent;
   z-index: 10;
   mask-image: url(backgroundMountains.svg);
   mask-repeat: no-repeat;
