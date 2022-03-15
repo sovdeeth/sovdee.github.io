@@ -1,7 +1,9 @@
 #map {
-    height: 400px;
+    height: 90%;
     /* The height is 400 pixels */
-    width: 50%;
+    width: 100%;
     /* The width is the width of the web page */
   }
-  
+#myRange {
+  width: 100%;
+}
