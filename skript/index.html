@@ -89,7 +89,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "Command: /test or /test command"<br>
         <br>
-        # broadcasts the name of the given player. "of" is optional.<br>
+        # sends the name of the given player. "of" is optional.<br>
         command /name [of] &lt;player&gt;:<br>
         &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "Player's name: %arg-1%, %argument 1%, or %player-argument%" to player # here 'player' refers to the player executing the command<br>
@@ -108,7 +108,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if loop-entity is arg-1:<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kill loop-entity<br>
         <br>
-        # sends the text given in the command. If no text is given, it will broadcast the default value of "default text". <br>
+        # broadcasts the text given in the command. If no text is given, it will broadcast the default value of "default text". <br>
         # note that the text is referenced as {_text input}, rather than arg-1 or similar.<br>
         command /broadcast [&lt;text input:text="default text"&gt;]:<br>
         &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
@@ -142,7 +142,7 @@
     
     <h2 class="title">Description</h2>
     <p class="subtitle">
-        The description of the command. Other plugins can get/show this like /help or /help teleport.
+        The description of the command. Other plugins can get/show this with <code>/help</code>, like <code>/help teleport</code>.
     </p>
     
     <h2 class="title">Permissions</h2>
